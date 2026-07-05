@@ -1,0 +1,52 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+body {
+  background: #fdfbf7;
+}
+
+/* ---------- Placeholder content (for testing scroll behavior) ---------- */
+
+.placeholder-main {
+  position: relative;
+  z-index: 10;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 120px;
+}
+
+.skeleton-block {
+  height: 16px;
+  border-radius: 8px;
+  background-color: #f3efe9;
+  border: 1px solid rgba(35, 33, 42, 0.08);
+}
+
+.skeleton-title {
+  height: 28px;
+  width: 70%;
+  margin-bottom: 12px;
+}
+
+.skeleton-subtitle {
+  height: 20px;
+  width: 45%;
+  margin-bottom: 24px;
+}
+
+.skeleton-group {
+  margin-bottom: 32px;
+}
+
+.skeleton-group .skeleton-block {
+  margin-bottom: 10px;
+}
+
+.skeleton-group .skeleton-block:last-child {
+  width: 60%;
+}

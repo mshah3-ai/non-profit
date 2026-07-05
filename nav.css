@@ -1,0 +1,435 @@
+/* ---------- Header / Nav ---------- */
+
+:root {
+  --cream: #fdfbf7;
+  --soft-sand: #f3efe9;
+  --charcoal: #23212a;
+  --cta-yellow: #ffc526;
+  --cta-yellow-deep: #e0a800;
+
+  /* Kept for backward compatibility with existing component CSS;
+     repointed at the new palette so the whole site re-themes from here. */
+  --slate-blue: #726e78;
+  --deep-teal: #23212a;
+  --nav-ink: #23212a;
+  --nav-muted: #726e78;
+  --nav-border: rgba(35, 33, 42, 0.14);
+  --nav-surface: rgba(253, 251, 247, 0.92);
+  --nav-surface-hover: rgba(35, 33, 42, 0.06);
+  --nav-height: 84px;
+  --nav-height-scrolled: 64px;
+}
+
+.site-header,
+.site-header *,
+.site-header *::before,
+.site-header *::after {
+  box-sizing: border-box;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  box-shadow: 0 0 0 rgba(35, 33, 42, 0);
+  transition: background-color 250ms ease, border-color 250ms ease,
+    backdrop-filter 250ms ease, max-width 300ms ease, margin 300ms ease,
+    top 300ms ease, border-radius 300ms ease, box-shadow 300ms ease;
+  font-family: "Fredoka", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
+}
+
+.site-header.is-scrolled {
+  background-color: var(--nav-surface);
+  border-color: var(--nav-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@media (min-width: 768px) {
+  .site-header.is-scrolled {
+    top: 16px;
+    max-width: 880px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(35, 33, 42, 0.18);
+  }
+}
+
+.navbar {
+  margin: 0 auto;
+  display: flex;
+  height: var(--nav-height);
+  width: 100%;
+  max-width: 1024px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  transition: height 300ms ease;
+}
+
+@media (min-width: 768px) {
+  .site-header.is-scrolled .navbar {
+    height: var(--nav-height-scrolled);
+  }
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  font-family: "Yellowtail", cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--nav-ink);
+  text-decoration: none;
+  letter-spacing: 0;
+  padding: 8px;
+  margin: -8px;
+  border-radius: 6px;
+  line-height: 1;
+  transition: background-color 150ms ease;
+}
+
+.brand:hover {
+  background-color: var(--nav-surface-hover);
+}
+
+.brand-accent {
+  color: var(--cta-yellow-deep);
+}
+
+/* Pages that open on a dark hero: invert the header to light text/icons
+   until scrolled, then it uninverts back to charcoal + yellow. */
+body.has-dark-hero .site-header:not(.is-scrolled) .brand,
+body.has-dark-hero .site-header:not(.is-scrolled) .nav-trigger,
+body.has-dark-hero .site-header:not(.is-scrolled) .nav-link,
+body.has-dark-hero .site-header:not(.is-scrolled) .nav-trigger .chevron,
+body.has-dark-hero .site-header:not(.is-scrolled) .menu-toggle {
+  color: var(--cream);
+}
+
+body.has-dark-hero .site-header:not(.is-scrolled) .brand-accent {
+  color: var(--cta-yellow);
+}
+
+body.has-dark-hero .site-header:not(.is-scrolled) .nav-trigger:hover,
+body.has-dark-hero .site-header:not(.is-scrolled) .nav-link:hover,
+body.has-dark-hero .site-header:not(.is-scrolled) .nav-item.is-open .nav-trigger,
+body.has-dark-hero .site-header:not(.is-scrolled) .brand:hover {
+  background-color: rgba(253, 251, 247, 0.12);
+}
+
+body.has-dark-hero .site-header:not(.is-scrolled) .menu-toggle {
+  border-color: rgba(253, 251, 247, 0.3);
+  background-color: rgba(253, 251, 247, 0.08);
+}
+
+/* Desktop menu + actions cluster (right side) */
+.navbar-right-group {
+  display: none;
+  align-items: center;
+  gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .navbar-right-group {
+    display: flex;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-trigger,
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+  padding: 0 12px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--nav-ink);
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  transition: background-color 150ms ease;
+}
+
+.nav-trigger:hover,
+.nav-link:hover,
+.nav-item.is-open .nav-trigger {
+  background-color: var(--nav-surface-hover);
+}
+
+.nav-trigger .chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 200ms ease;
+}
+
+.nav-item.is-open .nav-trigger .chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown panels */
+.dropdown-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid var(--nav-border);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(35, 33, 42, 0.18);
+  padding: 8px;
+  opacity: 0;
+  transform: translateY(-4px) scale(0.98);
+  pointer-events: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.nav-item.is-open .dropdown-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.dropdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 20rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav list items (shared between desktop dropdowns and mobile menu) */
+.nav-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 150ms ease;
+}
+
+.nav-list-item:hover {
+  background-color: var(--nav-surface-hover);
+}
+
+.nav-list-item .icon-box {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--nav-border);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.nav-list-item .icon-box svg {
+  width: 18px;
+  height: 18px;
+  color: var(--nav-ink);
+}
+
+.nav-list-item .item-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.nav-list-item .item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--nav-ink);
+}
+
+.nav-list-item .item-desc {
+  font-size: 12px;
+  color: var(--nav-muted);
+}
+
+/* Right side actions */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, opacity 150ms ease;
+  white-space: nowrap;
+}
+
+.btn-outline {
+  border: 1px solid var(--nav-border);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--nav-ink);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-solid {
+  border: 1.5px solid var(--cta-yellow);
+  background-color: var(--cta-yellow);
+  color: var(--nav-ink);
+  border-radius: 9999px;
+  padding: 0 22px;
+  font-weight: 600;
+}
+
+.btn-solid:hover {
+  background-color: var(--cta-yellow-deep);
+  border-color: var(--cta-yellow-deep);
+}
+
+.btn.w-full {
+  width: 100%;
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid var(--nav-border);
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle .toggle-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 300ms ease-in-out;
+}
+
+.menu-toggle.is-open .toggle-icon {
+  transform: rotate(-45deg);
+}
+
+.menu-toggle .toggle-icon path.top-bar {
+  stroke-dasharray: 12 63;
+  transition: stroke-dasharray 300ms ease-in-out, stroke-dashoffset 300ms ease-in-out;
+}
+
+.menu-toggle.is-open .toggle-icon path.top-bar {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42px;
+}
+
+/* Mobile menu drawer */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  overflow: hidden;
+  border-top: 1px solid var(--nav-border);
+  background-color: var(--nav-surface);
+  font-family: "Fredoka", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+.mobile-menu.is-open {
+  display: flex;
+  flex-direction: column;
+  animation: mobile-menu-in 220ms ease-out;
+}
+
+@keyframes mobile-menu-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  height: 100%;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-section-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nav-muted);
+  margin: 12px 8px 2px;
+}
+
+.mobile-section-label:first-child {
+  margin-top: 0;
+}
+
+.mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+}

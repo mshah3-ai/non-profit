@@ -1,0 +1,117 @@
+/* ---------- Our Story page ---------- */
+
+.story-hero {
+  position: relative;
+  z-index: 5;
+  background-color: var(--charcoal);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600' preserveAspectRatio='none'><polygon points='650,0 1200,0 550,600 150,600' fill='rgba(255,255,255,0.05)'/><polygon points='850,0 1200,0 750,600 500,600' fill='rgba(255,255,255,0.08)'/></svg>");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 88px 24px;
+  margin-top: calc(-1 * var(--nav-height, 84px) - 4px);
+  padding-top: calc(var(--nav-height, 84px) + 88px);
+  overflow: hidden;
+}
+
+.story-hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+.story-hero-text {
+  flex: 1 1 380px;
+}
+
+.story-hero .eyebrow {
+  color: var(--cta-yellow);
+}
+
+.hero-quote-mark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--cta-yellow);
+  margin-bottom: 8px;
+}
+
+.hero-quote {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
+  font-style: normal;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--cream);
+  margin: 0 0 20px;
+  max-width: 560px;
+}
+
+.hero-quote-attribution {
+  display: block;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(253, 251, 247, 0.75);
+  text-align: right;
+  max-width: 560px;
+}
+
+.story-hero-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(253, 251, 247, 0.85);
+  max-width: 460px;
+  margin: 0;
+}
+
+.story-hero-media {
+  flex: 1 1 280px;
+  min-width: 240px;
+}
+
+.img-placeholder--dark {
+  background: rgba(253, 251, 247, 0.06);
+  border-color: rgba(253, 251, 247, 0.3);
+  color: rgba(253, 251, 247, 0.65);
+}
+
+.story-hero-media .img-placeholder {
+  width: 100%;
+  height: 360px;
+}
+
+/* Narrative section */
+.story-section {
+  background: #2f2d38;
+  padding: 88px 24px 140px;
+}
+
+.story-section-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.story-heading {
+  font-family: "Fredoka", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 600;
+  text-align: center;
+  color: var(--cream);
+  margin: 0 0 56px;
+}
+
+.story-heading .accent {
+  color: var(--cta-yellow);
+}
+
+.story-body p {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+  color: rgba(253, 251, 247, 0.88);
+  margin: 0 0 24px;
+}
