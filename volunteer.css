@@ -147,6 +147,18 @@
   margin-bottom: 20px;
 }
 
+.track-media-photo {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.track-media-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .track-card .eyebrow {
   display: block;
 }
