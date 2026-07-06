@@ -1,6 +1,6 @@
-/* ---------- Contact page ---------- */
+/* ---------- Partner page ---------- */
 
-.contact-hero {
+.partner-hero {
   position: relative;
   z-index: 5;
   min-height: 68vh;
@@ -11,24 +11,24 @@
   align-items: flex-end;
   overflow: hidden;
   background-color: var(--charcoal);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600' preserveAspectRatio='none'><polygon points='650,0 1200,0 550,600 150,600' fill='rgba(255,255,255,0.05)'/><polygon points='850,0 1200,0 750,600 500,600' fill='rgba(255,255,255,0.08)'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600' preserveAspectRatio='none'><polygon points='0,0 550,0 250,600 0,600' fill='rgba(255,255,255,0.05)'/><polygon points='650,600 1200,600 950,0 700,0' fill='rgba(255,255,255,0.08)'/></svg>");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Fredoka", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
 }
 
-.contact-hero-inner {
+.partner-hero-inner {
   position: relative;
   z-index: 1;
   max-width: 680px;
   padding: 0 24px;
 }
 
-.contact-hero-inner .eyebrow {
+.partner-hero-inner .eyebrow {
   color: var(--cta-yellow);
 }
 
-.contact-hero-inner h1 {
+.partner-hero-inner h1 {
   margin: 0 0 18px;
   color: var(--cream);
   font-size: clamp(32px, 5.4vw, 58px);
@@ -37,16 +37,16 @@
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
-.contact-hero-inner p {
+.partner-hero-inner p {
   margin: 0;
-  max-width: 520px;
+  max-width: 540px;
   color: rgba(253, 251, 247, 0.85);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
   font-size: 17px;
   line-height: 1.7;
 }
 
-.contact-main {
+.partner-main {
   position: relative;
   z-index: 10;
   max-width: 1080px;
@@ -56,104 +56,102 @@
   font-family: "Fredoka", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
 }
 
-/* ---------- Contact method cards ---------- */
-
-.contact-methods {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 640px;
-  margin: 0 auto 96px;
-}
-
-.contact-method-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 6px;
-  background: var(--soft-sand);
-  border-radius: 20px;
-  padding: 36px 24px;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 150ms ease, box-shadow 150ms ease;
-}
-
-.contact-method-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(35, 33, 42, 0.12);
-}
-
-.contact-method-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  margin-bottom: 10px;
-  border-radius: 50%;
-  background: var(--cream);
-  color: var(--nav-ink);
-}
-
-.contact-method-icon svg {
-  width: 22px;
-  height: 22px;
-}
-
-.contact-method-title {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--nav-ink);
-}
-
-.contact-method-value {
-  margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--nav-ink);
-  border-bottom: 2px solid var(--cta-yellow);
-}
-
-/* ---------- Message form section ---------- */
-
-.contact-form-section {
+.partner-intro {
   max-width: 720px;
-  margin: 0 auto 96px;
+  margin: 0 auto 72px;
   text-align: center;
 }
 
-.contact-form-section .about-heading,
-.contact-form-section .about-body p {
+.partner-intro .about-heading,
+.partner-intro .about-body p {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.contact-form-embed {
+/* ---------- Partner type cards ---------- */
+
+.partner-types {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 96px;
+}
+
+.partner-type-card {
+  background: var(--soft-sand);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.partner-type-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--nav-ink);
+}
+
+.partner-type-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.partner-type-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--nav-ink);
+}
+
+.partner-type-desc {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(35, 33, 42, 0.8);
+}
+
+/* ---------- Inquiry form section ---------- */
+
+.partner-form-section {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.partner-form-section .about-heading,
+.partner-form-section .about-body p {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.partner-form-embed {
   margin-top: 40px;
   border-radius: 20px;
   overflow: hidden;
   text-align: left;
 }
 
-.contact-form-embed iframe {
+.partner-form-embed iframe {
   display: block;
   border: none;
 }
 
 /* ---------- Closing CTA ---------- */
 
-.contact-cta {
+.partner-cta {
   text-align: center;
   max-width: 560px;
-  margin: 0 auto;
+  margin: 96px auto 0;
 }
 
-.contact-cta h3 {
+.partner-cta h3 {
   margin: 0 0 12px;
   font-family: "Fredoka", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
   font-size: 24px;
@@ -161,7 +159,7 @@
   color: var(--nav-ink);
 }
 
-.contact-cta p {
+.partner-cta p {
   margin: 0 0 24px;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
   font-size: 15px;
@@ -169,16 +167,16 @@
   color: rgba(35, 33, 42, 0.8);
 }
 
-.contact-cta .btn {
+.partner-cta .btn {
   margin: 0 6px;
 }
 
 @media (max-width: 767px) {
-  .contact-methods {
+  .partner-types {
     grid-template-columns: 1fr;
   }
 
-  .contact-cta .btn {
+  .partner-cta .btn {
     margin: 6px;
   }
 }
