@@ -4,7 +4,7 @@
     {
       "name": "static-site",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["-y", "serve", "-l", "5500", "C:/Users/mithi/Downloads/non-profit"],
+      "runtimeArgs": ["-y", "serve", "-l", "5500", "/Users/pranshunautiyal/Desktop/non-profit"],
       "port": 5500
     }
   ]
