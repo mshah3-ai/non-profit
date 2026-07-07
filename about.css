@@ -55,6 +55,25 @@
   font-weight: 500;
 }
 
+.about-hero-media.has-photo {
+  background-image: none;
+}
+
+.about-hero-media.has-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero-media.has-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 19, 24, 0.72), rgba(20, 19, 24, 0.85));
+}
+
 .about-hero-heading {
   position: relative;
   z-index: 1;
@@ -127,6 +146,33 @@
 .img-placeholder span {
   font-size: 13px;
   font-weight: 500;
+}
+
+.img-placeholder.has-photo {
+  border: none;
+  background: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.img-placeholder.has-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.photo-credit {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--nav-muted);
+  text-align: center;
+}
+
+.photo-credit a {
+  color: inherit;
 }
 
 /* ---------- Info cards (Mission / Art With Purpose / Growing Together) ---------- */
