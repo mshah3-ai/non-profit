@@ -20,12 +20,6 @@
 			title: 'CTO &amp; Co-Founder',
 			desc: 'Pranshu builds and maintains the technology behind the organization&rsquo;s work, from the website to the tools volunteers use to coordinate visits and track impact.',
 			image: 'pranshu.png'
-		},
-		{
-			name: 'Aveek Sarkar',
-			title: 'CGO &amp; Co-Founder',
-			desc: 'Aveek leads growth and outreach, building relationships with care facilities, schools, and young artists to bring the organization&rsquo;s programs to more communities.',
-			image: 'aveek.png'
 		}
 	];
 
